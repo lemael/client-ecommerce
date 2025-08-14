@@ -18,7 +18,7 @@ const ChatBot: React.FC = () => {
 
     try {
       const response = await axios.post(
-        "https://server-ecommerce-ic99.onrender.com/api/chatbot",
+        "http://server-ecommerce-ic99.onrender.com/api/chatbot",
         {
           question,
         }
