@@ -35,6 +35,18 @@ const ChatBot: React.FC = () => {
         { text: response.data.answer, sender: "bot" },
       ]);
     } catch (error) {
+      if (error.response) {
+        // La requête a été faite et le serveur a répondu avec un code de statut
+        console.log(error.response.data);
+        console.log(error.response.status);
+        console.log(error.response.headers);
+      } else if (error.request) {
+        // La requête a été faite mais pas de réponse reçue
+        console.log(error.request);
+      } else {
+        // Quelque chose s'est passé en préparant la requête qui a déclenché une erreur
+        console.log("Erreur", error.message);
+      }
       setMessages((prev) => [
         ...prev,
         { text: "Erreur de connexion au chatbot.", sender: "bot" },
