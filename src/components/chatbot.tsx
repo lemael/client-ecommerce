@@ -21,6 +21,12 @@ const ChatBot: React.FC = () => {
         "https://server-ecommerce-ic99.onrender.com/api/chatbot",
         {
           question,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+          timeout: 5000, // timeout en millisecondes
         }
       );
 
