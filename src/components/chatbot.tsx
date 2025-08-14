@@ -24,7 +24,7 @@ const ChatBot: React.FC = () => {
         },
         {
           headers: {
-            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*",
           },
           timeout: 5000, // timeout en millisecondes
         }
